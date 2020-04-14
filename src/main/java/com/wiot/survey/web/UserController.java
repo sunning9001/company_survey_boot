@@ -66,7 +66,7 @@ public class UserController {
     }
     
   
-    
+ 
     private static final String PROJECT_PATH = System.getProperty("user.dir");//项目在硬盘上的基础路径
 
     private static final String RESOURCES_PATH = "/src/main/resources/static/";//资源文件路径

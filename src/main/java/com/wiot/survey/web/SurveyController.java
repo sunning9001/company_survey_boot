@@ -2,7 +2,9 @@ package com.wiot.survey.web;
 import com.wiot.survey.core.Result;
 import com.wiot.survey.core.ResultGenerator;
 import com.wiot.survey.model.Survey;
+import com.wiot.survey.model.Tude;
 import com.wiot.survey.service.SurveyService;
+import com.wiot.survey.util.MapUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
@@ -34,6 +36,14 @@ public class SurveyController {
         return ResultGenerator.genSuccessResult();
     }
 
+    @PostMapping("/getLocationAddress")
+    public Result add(Tude tude) {
+    	
+    	MapUtil.getAddress(tude.getLatitude(), tude.getLongitude());
+        return ResultGenerator.genSuccessResult();
+    }
+
+    
     @PostMapping("/delete")
     public Result delete(@RequestParam Integer id) {
         surveyService.deleteById(id);
