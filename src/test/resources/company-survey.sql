@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS `survey`;
+CREATE TABLE `survey` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`companyName` varchar(255) DEFAULT NULL,
+	`companyInfo` varchar(255) DEFAULT NULL,
+	`companyLink` varchar(255) DEFAULT NULL,
+	`companyAddress` varchar(255) DEFAULT NULL,
+	`createTime` varchar(255) DEFAULT NULL,
+	`linkName` varchar(255) DEFAULT NULL,
+	`likeTelephone` varchar(255) DEFAULT NULL,
+	`linkEmail` varchar(255) DEFAULT NULL,
+	`registerflag` varchar(255) DEFAULT NULL,
+	`registerTelephone` varchar(255) DEFAULT NULL,
+	`importantBusiness` varchar(255) DEFAULT NULL,
+	`masterBusiness` varchar(255) DEFAULT NULL,
+	`oweIp` varchar(255) DEFAULT NULL,
+	`companyMember` varchar(255) DEFAULT NULL,
+	`techMember` varchar(255) DEFAULT NULL,
+	`techMoney` varchar(255) DEFAULT NULL,
+	`businessMoney` varchar(255) DEFAULT NULL,
+	`companyDemand` varchar(255) DEFAULT NULL,
+	`remarkInfos` varchar(255) DEFAULT NULL,
+	`fileImagelist` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 

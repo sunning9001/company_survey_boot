@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wiot.survey.dao.SurveyMapper">
+  <resultMap id="BaseResultMap" type="com.wiot.survey.model.Survey">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="companyName" jdbcType="VARCHAR" property="companyname" />
+    <result column="companyInfo" jdbcType="VARCHAR" property="companyinfo" />
+    <result column="companyLink" jdbcType="VARCHAR" property="companylink" />
+    <result column="companyAddress" jdbcType="VARCHAR" property="companyaddress" />
+    <result column="createTime" jdbcType="VARCHAR" property="createtime" />
+    <result column="linkName" jdbcType="VARCHAR" property="linkname" />
+    <result column="likeTelephone" jdbcType="VARCHAR" property="liketelephone" />
+    <result column="linkEmail" jdbcType="VARCHAR" property="linkemail" />
+    <result column="registerflag" jdbcType="VARCHAR" property="registerflag" />
+    <result column="registerTelephone" jdbcType="VARCHAR" property="registertelephone" />
+    <result column="importantBusiness" jdbcType="VARCHAR" property="importantbusiness" />
+    <result column="masterBusiness" jdbcType="VARCHAR" property="masterbusiness" />
+    <result column="oweIp" jdbcType="VARCHAR" property="oweip" />
+    <result column="companyMember" jdbcType="VARCHAR" property="companymember" />
+    <result column="techMember" jdbcType="VARCHAR" property="techmember" />
+    <result column="techMoney" jdbcType="VARCHAR" property="techmoney" />
+    <result column="businessMoney" jdbcType="VARCHAR" property="businessmoney" />
+    <result column="companyDemand" jdbcType="VARCHAR" property="companydemand" />
+    <result column="remarkInfos" jdbcType="VARCHAR" property="remarkinfos" />
+    <result column="fileImagelist" jdbcType="VARCHAR" property="fileimagelist" />
+  </resultMap>
+</mapper>

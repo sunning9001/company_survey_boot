@@ -39,7 +39,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 /**
  * Spring MVC 配置
  */
-@Configuration
+
 public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 
     private final Logger logger = LoggerFactory.getLogger(WebMvcConfigurer.class);
@@ -112,7 +112,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
             registry.addInterceptor(new HandlerInterceptorAdapter() {
                 @Override
                 public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-                    //验证签名
+                  /*  //验证签名
                     boolean pass = validateSign(request);
                     if (pass) {
                         return true;
@@ -124,7 +124,8 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
                         result.setCode(ResultCode.UNAUTHORIZED).setMessage("签名认证失败");
                         responseResult(response, result);
                         return false;
-                    }
+                    }*/
+                	return true;
                 }
             });
         }
