@@ -1,5 +1,5 @@
-package com.wiot.survey.model;
 
+package com.wiot.survey.web;
 public class Tude {
 
 	private String latitude;
@@ -15,10 +15,6 @@ public class Tude {
 	}
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
-	}
-	@Override
-	public String toString() {
-		return "Tude [latitude=" + latitude + ", longitude=" + longitude + "]";
 	}
 	
 }

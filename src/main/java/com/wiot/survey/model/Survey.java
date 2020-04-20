@@ -31,6 +31,7 @@ public class Survey {
     @Column(name = "linkEmail")
     private String linkemail;
 
+    @Column(name = "registerFlag")
     private String registerflag;
 
     @Column(name = "registerTelephone")
@@ -63,8 +64,14 @@ public class Survey {
     @Column(name = "remarkInfos")
     private String remarkinfos;
 
-    @Column(name = "fileImagelist")
-    private String fileimagelist;
+    @Column(name = "fileList")
+    private String filelist;
+
+    @Column(name = "locationAddress")
+    private String locationaddress;
+
+    @Column(name = "businessName")
+    private String businessname;
 
     /**
      * @return id
@@ -193,7 +200,7 @@ public class Survey {
     }
 
     /**
-     * @return registerflag
+     * @return registerFlag
      */
     public String getRegisterflag() {
         return registerflag;
@@ -347,16 +354,44 @@ public class Survey {
     }
 
     /**
-     * @return fileImagelist
+     * @return fileList
      */
-    public String getFileimagelist() {
-        return fileimagelist;
+    public String getFilelist() {
+        return filelist;
     }
 
     /**
-     * @param fileimagelist
+     * @param filelist
      */
-    public void setFileimagelist(String fileimagelist) {
-        this.fileimagelist = fileimagelist;
+    public void setFilelist(String filelist) {
+        this.filelist = filelist;
+    }
+
+    /**
+     * @return locationAddress
+     */
+    public String getLocationaddress() {
+        return locationaddress;
+    }
+
+    /**
+     * @param locationaddress
+     */
+    public void setLocationaddress(String locationaddress) {
+        this.locationaddress = locationaddress;
+    }
+
+    /**
+     * @return businessName
+     */
+    public String getBusinessname() {
+        return businessname;
+    }
+
+    /**
+     * @param businessname
+     */
+    public void setBusinessname(String businessname) {
+        this.businessname = businessname;
     }
 }

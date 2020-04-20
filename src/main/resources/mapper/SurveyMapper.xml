@@ -14,7 +14,7 @@
     <result column="linkName" jdbcType="VARCHAR" property="linkname" />
     <result column="likeTelephone" jdbcType="VARCHAR" property="liketelephone" />
     <result column="linkEmail" jdbcType="VARCHAR" property="linkemail" />
-    <result column="registerflag" jdbcType="VARCHAR" property="registerflag" />
+    <result column="registerFlag" jdbcType="VARCHAR" property="registerflag" />
     <result column="registerTelephone" jdbcType="VARCHAR" property="registertelephone" />
     <result column="importantBusiness" jdbcType="VARCHAR" property="importantbusiness" />
     <result column="masterBusiness" jdbcType="VARCHAR" property="masterbusiness" />
@@ -25,6 +25,228 @@
     <result column="businessMoney" jdbcType="VARCHAR" property="businessmoney" />
     <result column="companyDemand" jdbcType="VARCHAR" property="companydemand" />
     <result column="remarkInfos" jdbcType="VARCHAR" property="remarkinfos" />
-    <result column="fileImagelist" jdbcType="VARCHAR" property="fileimagelist" />
+    <result column="fileList" jdbcType="VARCHAR" property="filelist" />
+    <result column="locationAddress" jdbcType="VARCHAR" property="locationaddress" />
+    <result column="businessName" jdbcType="VARCHAR" property="businessname" />
   </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, companyName, companyInfo, companyLink, companyAddress, createTime, linkName, 
+    likeTelephone, linkEmail, registerFlag, registerTelephone, importantBusiness, masterBusiness, 
+    oweIp, companyMember, techMember, techMoney, businessMoney, companyDemand, remarkInfos, 
+    fileList, locationAddress, businessName
+  </sql>
+  <select id="selectByExample" parameterType="com.wiot.survey.model.SurveyExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from survey
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.wiot.survey.model.SurveyExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from survey
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="com.wiot.survey.model.SurveyExample" resultType="java.lang.Long">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from survey
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update survey
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.companyname != null">
+        companyName = #{record.companyname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyinfo != null">
+        companyInfo = #{record.companyinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companylink != null">
+        companyLink = #{record.companylink,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyaddress != null">
+        companyAddress = #{record.companyaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null">
+        createTime = #{record.createtime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkname != null">
+        linkName = #{record.linkname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.liketelephone != null">
+        likeTelephone = #{record.liketelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkemail != null">
+        linkEmail = #{record.linkemail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registerflag != null">
+        registerFlag = #{record.registerflag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registertelephone != null">
+        registerTelephone = #{record.registertelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.importantbusiness != null">
+        importantBusiness = #{record.importantbusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="record.masterbusiness != null">
+        masterBusiness = #{record.masterbusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oweip != null">
+        oweIp = #{record.oweip,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companymember != null">
+        companyMember = #{record.companymember,jdbcType=VARCHAR},
+      </if>
+      <if test="record.techmember != null">
+        techMember = #{record.techmember,jdbcType=VARCHAR},
+      </if>
+      <if test="record.techmoney != null">
+        techMoney = #{record.techmoney,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessmoney != null">
+        businessMoney = #{record.businessmoney,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companydemand != null">
+        companyDemand = #{record.companydemand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remarkinfos != null">
+        remarkInfos = #{record.remarkinfos,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filelist != null">
+        fileList = #{record.filelist,jdbcType=VARCHAR},
+      </if>
+      <if test="record.locationaddress != null">
+        locationAddress = #{record.locationaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessname != null">
+        businessName = #{record.businessname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update survey
+    set id = #{record.id,jdbcType=INTEGER},
+      companyName = #{record.companyname,jdbcType=VARCHAR},
+      companyInfo = #{record.companyinfo,jdbcType=VARCHAR},
+      companyLink = #{record.companylink,jdbcType=VARCHAR},
+      companyAddress = #{record.companyaddress,jdbcType=VARCHAR},
+      createTime = #{record.createtime,jdbcType=VARCHAR},
+      linkName = #{record.linkname,jdbcType=VARCHAR},
+      likeTelephone = #{record.liketelephone,jdbcType=VARCHAR},
+      linkEmail = #{record.linkemail,jdbcType=VARCHAR},
+      registerFlag = #{record.registerflag,jdbcType=VARCHAR},
+      registerTelephone = #{record.registertelephone,jdbcType=VARCHAR},
+      importantBusiness = #{record.importantbusiness,jdbcType=VARCHAR},
+      masterBusiness = #{record.masterbusiness,jdbcType=VARCHAR},
+      oweIp = #{record.oweip,jdbcType=VARCHAR},
+      companyMember = #{record.companymember,jdbcType=VARCHAR},
+      techMember = #{record.techmember,jdbcType=VARCHAR},
+      techMoney = #{record.techmoney,jdbcType=VARCHAR},
+      businessMoney = #{record.businessmoney,jdbcType=VARCHAR},
+      companyDemand = #{record.companydemand,jdbcType=VARCHAR},
+      remarkInfos = #{record.remarkinfos,jdbcType=VARCHAR},
+      fileList = #{record.filelist,jdbcType=VARCHAR},
+      locationAddress = #{record.locationaddress,jdbcType=VARCHAR},
+      businessName = #{record.businessname,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
 </mapper>

@@ -1,4 +1,4 @@
-package com.conpany.project;
+package com.wiot.survey;
 
 
 import org.junit.runner.RunWith;
