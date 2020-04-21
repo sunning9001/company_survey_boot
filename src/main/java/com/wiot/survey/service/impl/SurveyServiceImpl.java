@@ -8,6 +8,8 @@ import com.wiot.survey.service.SurveyService;
 import tk.mybatis.mapper.entity.Example;
 
 import com.wiot.survey.core.AbstractService;
+
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,16 +29,20 @@ public class SurveyServiceImpl extends AbstractService<Survey> implements Survey
 	@Override
 	public List<Survey> queryByExample(Survey survey) {
 
+		
 		SurveyExample example = new SurveyExample();
-		if (survey.getCompanyname() != null)
+		if (!StringUtils.isBlank(survey.getCompanyname()))
 			example.or().andCompanynameLike(survey.getCompanyname());
-		if (survey.getCompanyinfo() != null)
+		if (!StringUtils.isBlank(survey.getCompanyinfo()))
 			example.or().andCompanyinfoLike(survey.getCompanyinfo());
-		if (survey.getLinkname() != null)
+		if (!StringUtils.isBlank(survey.getLinkname() ))
 			example.or().andLinknameLike(survey.getLinkname());
-		if (survey.getBusinessname() != null)
+		if (!StringUtils.isBlank(survey.getBusinessname() ))
 			example.or().andBusinessnameLike(survey.getBusinessname());
-		return this.surveyMapper.selectByExample(example);
+		if(example.getOredCriteria().size() > 0) {
+			return this.surveyMapper.selectByExample(example);
+		}
+		return this.surveyMapper.selectAll();
 	}
 
 }
